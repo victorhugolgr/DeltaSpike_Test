@@ -119,12 +119,12 @@
 			<scope>runtime</scope>
 		</dependency>
 		
-<!-- 		<!-- CDI -->
+ 		<!-- CDI -->
 		<dependency>
 			<groupId>org.jboss.weld.servlet</groupId>
 			<artifactId>weld-servlet</artifactId>
 			<version>2.3.3.Final</version>
-		</dependency> -->
+		</dependency> 
 
 	</dependencies>
 
