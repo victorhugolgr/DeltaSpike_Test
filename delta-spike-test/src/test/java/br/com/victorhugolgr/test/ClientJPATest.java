@@ -15,22 +15,22 @@ import br.com.victorhugolgr.service.ClienteService;
 public class ClientJPATest {
 
 	@Inject
-	private ClienteService clienteService;
-	
-	private Cliente cliente;
-	
+	private ClienteService service;
+
+	private Cliente cliente = new Cliente();
+
 	@Before
-	public void init(){
+	public void init() {
 		cliente.setDocumentoReceitaFederal("1234");
 		cliente.setEmail("victor.hugo@teste.com");
 		cliente.setNome("Victor Hugo");
 		cliente.setTipo(TipoPessoa.FISICA);
 	}
-	
+
 	@Test
-	public void insertCliente(){
-		clienteService.insert(cliente);
-		
-		clienteService.findAll().forEach(c -> System.out.println(c.getNome()));
+	public void insertCliente() {
+		service.insert(cliente);
+
+		service.findAll().forEach(c -> System.out.println(c.getNome()));
 	}
 }

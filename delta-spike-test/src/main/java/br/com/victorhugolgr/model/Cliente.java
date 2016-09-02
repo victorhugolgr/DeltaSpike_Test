@@ -11,6 +11,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
@@ -24,7 +25,7 @@ public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotBlank
@@ -32,19 +33,19 @@ public class Cliente implements Serializable {
 	private String nome;
 
 	@Email
-	@Column(nullable= false, length= 255)
+	@Column(nullable = false, length = 255)
 	private String email;
 
-	@NotBlank 
-	@Column(name="doc_receita_federal", length=25, nullable=false)
+	@NotBlank
+	@Column(name = "doc_receita_federal", length = 25, nullable = false)
 	private String documentoReceitaFederal;
-	
+
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	@Column(nullable=false, length=10)
+	@Column(nullable = false, length = 10)
 	private TipoPessoa tipo;
-	
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)	
+
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Endereco> enderecos = new ArrayList<>();
 
 	public Long getId() {
@@ -79,7 +80,6 @@ public class Cliente implements Serializable {
 		this.documentoReceitaFederal = documentoReceitaFederal;
 	}
 
-	
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}

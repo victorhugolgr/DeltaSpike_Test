@@ -12,6 +12,8 @@ public class EntityManagerProducer {
 
 	@Produces // you can also make this @RequestScoped
 	public EntityManager create() {
+		System.out.println("********************************************************************************************");
+		System.out.println(emf);
 		return emf.createEntityManager();
 	}
 

@@ -40,24 +40,7 @@
 
 	<dependencies>
 
-		<!-- JSF -->
-		<dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>javax.faces</artifactId>
-			<version>2.2.13</version>
-		</dependency>
-		<!-- PrimeFaces 6.0 -->
-		<dependency>
-			<groupId>org.primefaces</groupId>
-			<artifactId>primefaces</artifactId>
-			<version>5.3</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.primefaces.themes</groupId>
-			<artifactId>redmond</artifactId>
-			<version>1.0.10</version>
-		</dependency>
+	
 
 		<!-- Núcleo do Hibernate -->
 		<dependency>
@@ -76,12 +59,6 @@
 		</dependency>
 
 
-		<!-- Driver JDBC do MySQL -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.38</version>
-		</dependency>
 
 		<!-- Hibernate Validator -->
 		<dependency>
@@ -90,20 +67,8 @@
 			<version>5.2.4.Final</version>
 		</dependency>
 
-		<!-- Commons Lang (utilitarios) -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.4</version>
-			<scope>compile</scope>
-		</dependency>
 
-		<!-- JUnit 4 -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.4</version>
-		</dependency>
+
 
 		<!-- Apache DeltaSpike Core API » 1.7.1 -->
 		<dependency>
@@ -150,14 +115,23 @@
 
 		<dependency>
 			<groupId>org.apache.deltaspike.cdictrl</groupId>
-			<artifactId>deltaspike-cdictrl-api</artifactId>
+			<artifactId>deltaspike-cdictrl-weld</artifactId>
 			<version>1.7.1</version>
-			<scope>compile</scope>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.weld.se</groupId>
+			<artifactId>weld-se-core</artifactId>
+			<version>2.3.2.Final</version>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- Apache DeltaSpike Core Implementation » 1.7.1 -->
 
 		<!-- CDI -->
+		<!-- 
+		 -->
 		<dependency>
 			<groupId>org.jboss.weld</groupId>
 			<artifactId>weld-core</artifactId>
@@ -179,6 +153,8 @@
 			<artifactId>hamcrest-core</artifactId>
 			<version>1.3</version>
 		</dependency>
+		
+		
 
 	</dependencies>
 
