@@ -113,6 +113,20 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.deltaspike.modules</groupId>
+			<artifactId>deltaspike-data-module-api</artifactId>
+			<version>1.7.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.deltaspike.modules</groupId>
+			<artifactId>deltaspike-data-module-impl</artifactId>
+			<version>1.7.1</version>
+			<scope>runtime</scope>
+		</dependency>
+
 		<!-- Apache DeltaSpike Core Implementation » 1.7.1 -->
 		<dependency>
 			<groupId>org.apache.deltaspike.core</groupId>
@@ -120,14 +134,14 @@
 			<version>1.7.1</version>
 			<scope>runtime</scope>
 		</dependency>
-		
- 		<!-- CDI -->
+
+		<!-- CDI -->
 		<dependency>
 			<groupId>org.jboss.weld</groupId>
 			<artifactId>weld-core</artifactId>
 			<version>2.3.2.Final</version>
 			<scope>provided</scope>
-		</dependency> 
+		</dependency>
 
 	</dependencies>
 
