@@ -8,6 +8,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,15 +20,15 @@ public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(length=50,nullable=false)
+	@Column(length = 50, nullable = false)
 	private String descricao;
-	
+
 	@ManyToOne
-	@JoinColumn(name="categoria_pai_id")
+	@JoinColumn(name = "categoria_pai_id")
 	private Categoria categoriaPai;
-	
+
 	@OneToMany(mappedBy = "categoriaPai", cascade = CascadeType.MERGE)
 	private List<Categoria> subCategorias = new ArrayList<>();
 

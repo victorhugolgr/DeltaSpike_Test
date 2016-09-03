@@ -4,16 +4,21 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceUnit;
+
+import org.apache.deltaspike.jpa.api.entitymanager.PersistenceUnitName;
 
 @ApplicationScoped
 public class EntityManagerProducer {
-	@PersistenceUnit
+
+	@Inject
+	@PersistenceUnitName("delta-spike-test")
 	private EntityManagerFactory emf;
 
-	@Produces @RequestScoped
+	@Produces
+	@RequestScoped
 	public EntityManager create() {
 		System.out.println("********************************************************************************************");
 		System.out.println(emf);
