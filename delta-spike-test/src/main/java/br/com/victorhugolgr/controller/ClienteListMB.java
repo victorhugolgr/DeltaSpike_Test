@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.victorhugolgr.model.Cliente;
-import br.com.victorhugolgr.repository.ClienteRepository;
+import br.com.victorhugolgr.service.ClienteService;
 
 @Named
 @ViewScoped
@@ -24,15 +24,15 @@ public class ClienteListMB implements Serializable {
 	private Cliente cliente;
 
 	@Inject
-	private ClienteRepository service;
-	
+	private ClienteService service;
+
 	@PostConstruct
-	public void init(){
+	public void init() {
 		cliente = new Cliente();
 	}
 
 	public void salvar() {
-		cliente = service.save(cliente);
+		cliente = service.insert(cliente);
 		FacesContext.getCurrentInstance().addMessage(null,
 				new FacesMessage(FacesMessage.SEVERITY_INFO, "Salvo com sucesso! ID = " + cliente.getId(), "INFO"));
 	}
