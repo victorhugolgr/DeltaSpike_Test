@@ -1,20 +1,12 @@
 package br.com.victorhugolgr.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -25,7 +17,7 @@ public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
 	@NotBlank
@@ -39,14 +31,6 @@ public class Cliente implements Serializable {
 	@NotBlank
 	@Column(name = "doc_receita_federal", length = 25, nullable = false)
 	private String documentoReceitaFederal;
-
-	@NotNull
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false, length = 10)
-	private TipoPessoa tipo;
-
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Endereco> enderecos = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -78,22 +62,6 @@ public class Cliente implements Serializable {
 
 	public void setDocumentoReceitaFederal(String documentoReceitaFederal) {
 		this.documentoReceitaFederal = documentoReceitaFederal;
-	}
-
-	public List<Endereco> getEnderecos() {
-		return enderecos;
-	}
-
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
-	}
-
-	public TipoPessoa getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(TipoPessoa tipo) {
-		this.tipo = tipo;
 	}
 
 	@Override

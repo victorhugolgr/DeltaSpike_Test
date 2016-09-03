@@ -8,15 +8,7 @@
 		<!--
 		<non-jta-data-source>java:jboss/datasources/ExampleDS</non-jta-data-source>
 		  -->
-		<class>br.com.victorhugolgr.model.Categoria</class>
 		<class>br.com.victorhugolgr.model.Cliente</class>
-		<class>br.com.victorhugolgr.model.Endereco</class>
-		<class>br.com.victorhugolgr.model.EnderecoEntrega</class>
-		<class>br.com.victorhugolgr.model.Grupo</class>
-		<class>br.com.victorhugolgr.model.ItemPedido</class>
-		<class>br.com.victorhugolgr.model.Pedido</class>
-		<class>br.com.victorhugolgr.model.Produto</class>
-		<class>br.com.victorhugolgr.model.Usuario</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />

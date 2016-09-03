@@ -16,9 +16,7 @@ public class ClienteService {
 
 	@Transactional
 	public Cliente insert(Cliente entity) {
-
 		return clienteRepository.save(entity);
-
 	}
 
 	public List<Cliente> findAll() {

@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import br.com.victorhugolgr.model.Cliente;
-import br.com.victorhugolgr.model.TipoPessoa;
 import br.com.victorhugolgr.service.ClienteService;
 
 @RunWith(CdiTestRunner.class)
@@ -24,7 +23,6 @@ public class ClientJPATest {
 		cliente.setDocumentoReceitaFederal("1234");
 		cliente.setEmail("victor.hugo@teste.com");
 		cliente.setNome("Victor Hugo");
-		cliente.setTipo(TipoPessoa.FISICA);
 	}
 
 	@Test
