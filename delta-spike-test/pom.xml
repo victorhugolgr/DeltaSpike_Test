@@ -40,6 +40,19 @@
 
 	<dependencies>
 
+		<!-- JSF -->
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.faces</artifactId>
+			<version>2.2.13</version>
+		</dependency>
+		<!-- PrimeFaces 6.0 -->
+		<dependency>
+			<groupId>org.primefaces</groupId>
+			<artifactId>primefaces</artifactId>
+			<version>6.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
@@ -75,7 +88,7 @@
 
 
 
-		<!-- Apache DeltaSpike Core API » 1.7.1 -->
+		<!-- Apache DeltaSpike -->
 		<dependency>
 			<groupId>org.apache.deltaspike.core</groupId>
 			<artifactId>deltaspike-core-api</artifactId>
@@ -126,13 +139,29 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.deltaspike.modules</groupId>
+			<artifactId>deltaspike-jsf-module-api</artifactId>
+			<version>1.7.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.deltaspike.modules</groupId>
+			<artifactId>deltaspike-jsf-module-impl</artifactId>
+			<version>1.7.1</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- FIM Apache DeltaSpike -->
+
+
+
+		<dependency>
 			<groupId>org.jboss.weld.se</groupId>
 			<artifactId>weld-se-core</artifactId>
 			<version>2.3.2.Final</version>
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Apache DeltaSpike Core Implementation » 1.7.1 -->
 
 		<!-- CDI -->
 		<!-- -->
